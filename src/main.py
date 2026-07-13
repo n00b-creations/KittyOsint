@@ -9,6 +9,11 @@ import os
 import sys
 from pathlib import Path
 
+# Add the 'src' directory to the Python import path so Streamlit can resolve local modules.
+src_path = str(Path(__file__).resolve().parent)
+if src_path not in sys.path:
+    sys.path.insert(0, src_path)
+
 
 def _extension_base() -> Path:
     base = globals().get("__extension_base__")
