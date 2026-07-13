@@ -21,10 +21,20 @@ def _extension_base() -> Path:
 
 
 def setup_paths() -> Path:
-    from core.utils.marketplace_apps import framework_root
-
     ext_base = _extension_base()
-    root = framework_root()
+    root = ext_base
+
+    try:
+        from core.utils.marketplace_apps import framework_root as marketplace_framework_root
+    except Exception:
+        marketplace_framework_root = None
+
+    if marketplace_framework_root is not None:
+        try:
+            root = Path(marketplace_framework_root()).resolve()
+        except Exception:
+            root = ext_base
+
     for path in (root, ext_base, ext_base / "src"):
         path_str = str(path)
         if path.exists() and path_str not in sys.path:
