@@ -5,7 +5,7 @@ description = "OSINT graph interface for KittySploit modules"
 author = "KittySploit Team"
 
 extension_type = "UI"
-entry_point = "src/main.py"
+entry_point = "main.py"
 
 [compatibility]
 kittysploit_min = "1.0.0"

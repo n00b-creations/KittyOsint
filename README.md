@@ -32,7 +32,7 @@ Local install (development):
 kittysploit> market install /path/to/KittyOsint
 ```
 
-The extension type is **UI**; the entry point is `src/main.py` (defined in `extension.toml`).
+The extension type is **UI**; the entry point is `main.py` (defined in `extension.toml`).
 
 ## Usage
 
@@ -41,7 +41,7 @@ The extension type is **UI**; the entry point is `src/main.py` (defined in `exte
 After installation, launch the extension from the marketplace or directly:
 
 ```bash
-python src/main.py
+python main.py
 ```
 
 The UI is served at **http://127.0.0.1:8001** by default.
@@ -56,8 +56,8 @@ Available options:
 Examples:
 
 ```bash
-python src/main.py --port 8003
-python src/main.py --host 0.0.0.0 --port 8003
+python main.py --port 8003
+python main.py --host 0.0.0.0 --port 8003
 ```
 
 On first startup, KittySploit may prompt for charter acceptance and encryption setup (sensitive data in the database).
@@ -67,9 +67,9 @@ On first startup, KittySploit may prompt for charter acceptance and encryption s
 Run all compatible OSINT modules on a target without opening a browser:
 
 ```bash
-python src/main.py example.com
-python src/main.py user@domain.tld
-python src/main.py https://target.example/
+python main.py example.com
+python main.py user@domain.tld
+python main.py https://target.example/
 ```
 
 ### API
@@ -117,7 +117,7 @@ KittyOsint/
 
 1. Clone the repo and install locally with `market install ./KittyOsint`
 2. Ensure the KittySploit framework and `auxiliary/osint/` modules are available
-3. Run `python src/main.py` and open the URL printed in the terminal
+3. Run `python main.py` and open the URL printed in the terminal
 
 Network and database permissions are declared in `extension.toml` (`network_access`, `database_access`).
 
