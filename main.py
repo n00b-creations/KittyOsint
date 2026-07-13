@@ -9,17 +9,6 @@ import os
 import sys
 from pathlib import Path
 
-# Add the repository root and src directory to the Python import path so Streamlit can resolve local modules.
-script_dir = Path(__file__).resolve().parent
-repo_root = script_dir.parent if script_dir.name == "src" else script_dir
-src_path = repo_root / "src"
-
-for path in (repo_root, src_path):
-    if path.exists():
-        path_str = str(path)
-        if path_str not in sys.path:
-            sys.path.insert(0, path_str)
-
 
 def _extension_base() -> Path:
     base = globals().get("__extension_base__")
